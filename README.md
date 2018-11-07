@@ -14,6 +14,8 @@ Containers themselves are immutable, meaning any changes made to a running conta
 
 ## Some best practices to consider
 
+The below are a list of best practices to consider when discussing Docker runtime security
+
 ### AppArmor & Docker
 
 From the Docker documentation: 
