@@ -59,4 +59,4 @@ By using the `--restart` flag when running a container, you can specify how a co
 
 ## Conclusion
 
-Docker runtime security is critical to overall container security strategy. While taking the above best practices into consideration, conducting their own research specific to organizational needs, and applying host and Docker image security best practices, development teams can greatly increase their overall security throughout a container lifecyle. 
+Docker runtime security is critical to overall container security strategy. While taking the above best practices into consideration, conducting research specific to organizational needs, and applying the appropriate host and Docker image security practices, development teams can greatly increase their overall security throughout a container's lifecyle. 
