@@ -55,3 +55,8 @@ In the case of managing container CPU, the `--cpu` flags, give more control over
 ### Set on-failure container restart policy
 
 By using the `--restart` flag when running a container, you can specify how a container should or should not be restarted on exit. If a container keeps exiting and attempting to restart, it could possibly lead to a denial of service on the host. Additionally, ignoring the exis status of a container and always attempting to restart the container can lead to a non-investigation of the root cause behind the termination. An investigation should always be conducted when a container is exited and attempted to be restarted. The `--on-failure` restart policy should be configured to limit number of retries. 
+
+
+## Conclusion
+
+Docker runtime security is critical to overall container security strategy. While taking the above best practices into consideration, conducting their own research specific to organizational needs, and applying host and Docker image security best practices, development teams can greatly increase their overall security throughout a container lifecyle. 
