@@ -56,6 +56,10 @@ In the case of managing container CPU, the `--cpu` flags, give more control over
 
 By using the `--restart` flag when running a container, you can specify how a container should or should not be restarted on exit. If a container keeps exiting and attempting to restart, it could possibly lead to a denial of service on the host. Additionally, ignoring the exis status of a container and always attempting to restart the container can lead to a non-investigation of the root cause behind the termination. An investigation should always be conducted when a container is exited and attempted to be restarted. The `--on-failure` restart policy should be configured to limit number of retries. 
 
+### Mount container's root filesystem as read only
+
+Containers should be run with their root filesystems in read-only mode. This isolates writes to specifically defined directories, which can then be easily monitored. Additionally, using read-only filesystems makes containers more reslient to being compromised. Data should also not be written within containers. This is just a standard piece following the best practice of immuntable infrastructure, and reduces attack vectors since the instance cannot be written to. There should be an explicitly defined volume for writing for the container. 
+
 
 ## Conclusion
 
