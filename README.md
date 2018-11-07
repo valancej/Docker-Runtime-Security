@@ -62,6 +62,16 @@ By using the `--restart` flag when running a container, you can specify how a co
 
 Containers should be run with their root filesystems in read-only mode. This isolates writes to specifically defined directories, which can then be easily monitored. Additionally, using read-only filesystems makes containers more reslient to being compromised. Data should also not be written within containers. This is just a standard piece following the best practice of immuntable infrastructure, and reduces attack vectors since the instance cannot be written to. There should be an explicitly defined volume for writing for the container. 
 
+### Vulnerabilites
+
+Containers should be monitored for existing vulnerabilites, and when problems are detected, patched or remidiated. Scans of containers should find an inventory of vulnerable packages (CVEs) at the operating system and application layers. Organizations should also implement container aware tools designed to operate at the same elasticity and agility of containers. Checks should be looking for: 
+
+- Invalid or unexpected process execution
+- Invalid or unexpected system calls
+- Changes to protected configs
+- Writes to unexpected locations or file types
+- Malware execution
+- Traffic sent to unexpected network destinations
 
 ## Conclusion
 
