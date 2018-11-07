@@ -22,6 +22,10 @@ From the Docker documentation:
 
 It is available on Debian and Ubuntu by default. In short, it is important for system administrators to not disable Docker's default AppArmor profile or create their own customer security profile for conatiners specific to their organization. Once this profile is utilized, the container has a certain set of restrictions and capabilities such as network access or file read/write/execute permissions. For more info on Apparmor see the official Docker documentation: https://docs.docker.com/engine/security/apparmor/
 
+### SELinux & Docker
+
+SELinux is an appliction secrutiy system that provides an access control system that greatly augments the Discretionary Access Control model. If applicable on the Linux host OS, you can start Docker in daemon mode with SELinux enabled. The container would then have a set of restrictions as definied in the SELinux policy. For more info on SELinux: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/container_security_guide/docker_selinux_security_policy
+
 ### Do not use privileged containers
 
 Do not allow containers to be run with the `--privileged` flag. This flag gives all capabilities to the container, and also lifts all the limitations enforced by the device cgroup controller. In short, the container can then do almost everything the host can do. 
