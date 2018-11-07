@@ -30,11 +30,14 @@ Do not allow containers to be run with the `--privileged` flag. This flag gives 
 
 The Dockerfile defines which ports will be opened by default on a running conatiner. Only the ports that are needed and relevant to the application should be open. If there is access to the Dockerfile this can be evident by looking for the `EXPOSE` instruction. 
 
-### Do no share the host's network namespace
+### Do not share the host's network namespace
 
 The networking mode on a container when set to `--net=host`, skips placing the container inside a separate network stack. In other words, this tells Docker to not containerize the container's networking. This is potentially dangerous in that it allows the container to open low-numbered ports like any other root process. Additionally, a container could potentially do unexpected things such as terminate the Docker host. 
 
-Simply, do not add the `--net=host1` option when running a container. 
+Simply, do not add the `--net=host` option when running a container. 
 
 ### Limit memory limits of containers 
 
+By default, a container has no resource constraints and can use as much of a given resource as the host's kernal allows. Additionally. all containers on a Docker host share the resources equally and non memory limits are enfored. A major risk is when a running container begins to consume too much memory on the host machine. For Linux hosts, if the kernal detect that there is not enough memory to perform important system functions, it through an out of memory exception, and beings to kill processes to free up memory. This could potentially bring down an entire system if the wrong process is killed. 
+
+Docker can enforce hard memory limits, which allow the container to use no more than a given amount of user or system memory. Docker can also enforce soft memory limits, which allow the conatiner to user as much memory as needed unless certain conditions are met. When running a container the `--memory` flag is what defines the maximum amount of memory the container can use. 
