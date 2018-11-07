@@ -30,6 +30,10 @@ Do not allow containers to be run with the `--privileged` flag. This flag gives 
 
 The Dockerfile defines which ports will be opened by default on a running conatiner. Only the ports that are needed and relevant to the application should be open. If there is access to the Dockerfile this can be evident by looking for the `EXPOSE` instruction. 
 
+### Do not run ssh within containers
+
+SSH server should not be running within a container. Here is a blog post explaining: https://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/
+
 ### Do not share the host's network namespace
 
 The networking mode on a container when set to `--net=host`, skips placing the container inside a separate network stack. In other words, this tells Docker to not containerize the container's networking. This is potentially dangerous in that it allows the container to open low-numbered ports like any other root process. Additionally, a container could potentially do unexpected things such as terminate the Docker host. 
