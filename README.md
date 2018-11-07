@@ -36,7 +36,7 @@ The networking mode on a container when set to `--net=host`, skips placing the c
 
 Simply, do not add the `--net=host` option when running a container. 
 
-### Limit memory limits of containers 
+### Limit memory usage of containers 
 
 By default, a container has no resource constraints and can use as much of a given resource as the host's kernal allows. Additionally. all containers on a Docker host share the resources equally and non memory limits are enfored. A major risk is when a running container begins to consume too much memory on the host machine. For Linux hosts, if the kernal detect that there is not enough memory to perform important system functions, it through an out of memory exception, and beings to kill processes to free up memory. This could potentially bring down an entire system if the wrong process is killed. 
 
