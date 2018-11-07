@@ -43,3 +43,7 @@ By default, a container has no resource constraints and can use as much of a giv
 Docker can enforce hard memory limits, which allow the container to use no more than a given amount of user or system memory. Docker can also enforce soft memory limits, which allow the conatiner to user as much memory as needed unless certain conditions are met. When running a container the `--memory` flag is what defines the maximum amount of memory the container can use. 
 
 In the case of managing container CPU, the `--cpu` flags, give more control over the container's access to the host machines CPU cycles.
+
+### Set on-failure container restart policy
+
+By using the `--restart` flag when running a container, you can specify how a container should or should not be restarted on exit. If a container keeps exiting and attempting to restart, it could possibly lead to a denial of service on the host. Additionally, ignoring the exis status of a container and always attempting to restart the container can lead to a non-investigation of the root cause behind the termination. An investigation should always be conducted when a container is exited and attempted to be restarted. The `--on-failure` restart policy should be configured to limit number of retries. 
