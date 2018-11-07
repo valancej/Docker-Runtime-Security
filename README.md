@@ -28,6 +28,12 @@ It is available on Debian and Ubuntu by default. In short, it is important for s
 
 SELinux is an appliction secrutiy system that provides an access control system that greatly augments the Discretionary Access Control model. If applicable on the Linux host OS, you can start Docker in daemon mode with SELinux enabled. The container would then have a set of restrictions as definied in the SELinux policy. For more info on SELinux: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/container_security_guide/docker_selinux_security_policy
 
+### Seccomp & Docker
+
+Seccomp is a Linux kernal feature that can be used to restrict the actions available within a container. The default seccomp profile disables about 44 system calls out of over 300. At minimum, organizations should ensure conatiners are run with the default seccomp profile. 
+
+For more info on seccomp: https://docs.docker.com/engine/security/seccomp/
+
 ### Do not use privileged containers
 
 Do not allow containers to be run with the `--privileged` flag. This flag gives all capabilities to the container, and also lifts all the limitations enforced by the device cgroup controller. In short, the container can then do almost everything the host can do. 
@@ -72,6 +78,15 @@ Containers should be monitored for existing vulnerabilites, and when problems ar
 - Writes to unexpected locations or file types
 - Malware execution
 - Traffic sent to unexpected network destinations
+
+## Unbounded network access from containers
+
+Organizations should control the egress network traffic sent by containers. Tools for monitoring the inter-container traffic should at the very least accomplish the following:
+
+- Automated determination of proper container networking surfaces, including inbound and process-port bindings.
+- Detection of traffic flow both between containers and other network entitites. 
+- Detection of network anomalies, such as unexpected traffic flows within the organization's network and port scanning. 
+- 
 
 ## Conclusion
 
