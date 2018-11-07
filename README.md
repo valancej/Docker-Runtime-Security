@@ -24,7 +24,7 @@ It is available on Debian and Ubuntu by default. In short, it is important for s
 
 ### Do not use privileged containers
 
-Do not allow containers to be run with the `--priviledged` flag. This flag gives all capabilities to the container, and also lifts all the limitations enforced by the device cgroup controller. In short, the container can then do almost everything the host can do. 
+Do not allow containers to be run with the `--privileged` flag. This flag gives all capabilities to the container, and also lifts all the limitations enforced by the device cgroup controller. In short, the container can then do almost everything the host can do. 
 
 ### Do not expose unused ports
 
