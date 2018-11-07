@@ -42,4 +42,4 @@ By default, a container has no resource constraints and can use as much of a giv
 
 Docker can enforce hard memory limits, which allow the container to use no more than a given amount of user or system memory. Docker can also enforce soft memory limits, which allow the conatiner to user as much memory as needed unless certain conditions are met. When running a container the `--memory` flag is what defines the maximum amount of memory the container can use. 
 
-In the case of managing container CPU the `--cpu` flags, which give more control over the container's access to the host machines CPU cycles.
+In the case of managing container CPU, the `--cpu` flags, give more control over the container's access to the host machines CPU cycles.
