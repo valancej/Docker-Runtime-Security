@@ -12,7 +12,7 @@ Containers themselves are immutable, meaning any changes made to a running conta
 
 **Why runtime container security is important?** One of the last pieces of a container's lifecycle is deployment to production, for many organizations, this stage is the most critical. Oftentimes, a production deployment is the longest period of a container lifecyle, and therefore, needs to be consistently monitored for threats, misconfigurations, and other weaknesses. Once we have containers live and running, it is vital to be able to take action quickly and in real time to mitigate potential attacks. Simply, production deployments are extremely important pieces of infrastructure and highly valued to organizations and their customers. 
 
-## AppArmor
+## AppArmor & Docker
 
 From the Docker documentation: 
 
